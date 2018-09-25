@@ -1,23 +1,23 @@
 package structure;
 
-public class SelectSort {
+public class SelectionSort {
     public static void main(String[] args) {
-        SelectSort selectSort = new SelectSort();
-        selectSort.insert(7);
-        selectSort.insert(2);
-        selectSort.insert(3);
-        selectSort.insert(5);
-        selectSort.insert(1);
-        selectSort.display();
-        selectSort.selectSort();
-        selectSort.display();
+        SelectionSort selectionSort = new SelectionSort();
+        selectionSort.insert(7);
+        selectionSort.insert(2);
+        selectionSort.insert(3);
+        selectionSort.insert(5);
+        selectionSort.insert(1);
+        selectionSort.display();
+        selectionSort.selectSort();
+        selectionSort.display();
     }
 
     private long[] arr;
     private int nElement;
     private int DEFAULT_SIZE = 10;
 
-    public SelectSort() {
+    public SelectionSort() {
         this.arr = new long[DEFAULT_SIZE];
         this.nElement = 0;
     }
