@@ -16,6 +16,7 @@ public class BubbleSort {
         bubbleSort.delete(2);
         bubbleSort.display();
     }
+
     //数组
     private long[] arr;
     //实际元素个数
@@ -66,7 +67,7 @@ public class BubbleSort {
 
     //展示数组元素
     private void display() {
-        for (int i = 0; i < nElements ; i++) {
+        for (int i = 0; i < nElements; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
@@ -74,16 +75,16 @@ public class BubbleSort {
 
     //冒泡排序
     public void bubbleSort() {
-        for (int i = nElements - 1; i > 0 ; i--) {
+        for (int i = nElements - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
-                if(arr[j]>arr[j+1]){
-                    swap(j,j+1);
+                if (arr[j] > arr[j + 1]) {
+                    swap(j, j + 1);
                 }
             }
         }
     }
 
-    public void swap(int one,int two){
+    public void swap(int one, int two) {
         long temp = arr[one];
         arr[one] = arr[two];
         arr[two] = temp;

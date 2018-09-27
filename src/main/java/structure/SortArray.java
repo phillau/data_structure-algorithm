@@ -37,18 +37,18 @@ public class SortArray {
     //增加元素的方法
     public void insert(long element) {
         boolean flag = false;
-        if(nElements==0){
+        if (nElements == 0) {
             arr[0] = element;
         }
         for (int i = 0; i < nElements; i++) {
             if (arr[i] < element) continue;
             for (int j = nElements; j > i; j--) {
                 flag = true;
-                arr[j] = arr[j -1];
+                arr[j] = arr[j - 1];
             }
             arr[i] = element;
         }
-        if(!flag) arr[nElements] = element;
+        if (!flag) arr[nElements] = element;
         nElements++;
     }
 
@@ -64,38 +64,38 @@ public class SortArray {
     public void delete(long element) {
         boolean exist = false;
         for (int i = 0; i < nElements; i++) {
-            if(arr[i]-element==0){
+            if (arr[i] - element == 0) {
                 exist = true;
                 for (int j = i; j < nElements; j++) {
-                    arr[j] = arr[j+1];
+                    arr[j] = arr[j + 1];
                 }
             }
         }
-        if(!exist){
+        if (!exist) {
             throw new RuntimeException("元素不存在");
-        }else {
+        } else {
             nElements--;
         }
     }
 
     //二分查找
-    public int find(long element){
+    public int find(long element) {
         //初始位置
         int start = 0;
         //结束位置
         int end = nElements - 1;
         //中间位置
         int middle;
-        while (true){
-            middle = (end + start)/2;
-            if(element == arr[middle]){
+        while (true) {
+            middle = (end + start) / 2;
+            if (element == arr[middle]) {
                 return middle;
-            }else if(element < arr[middle]){
+            } else if (element < arr[middle]) {
                 end = middle - 1;
-            }else if(element > arr[middle]){
+            } else if (element > arr[middle]) {
                 start = middle + 1;
             }
-            if(start>end){
+            if (start > end) {
                 throw new RuntimeException("元素不存在");
             }
         }
